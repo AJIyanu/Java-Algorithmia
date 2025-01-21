@@ -63,27 +63,4 @@ java LibrarySystem
 
 ---
 
-## Example Commands
-
-Below is a list of example commands you can use in the program:
-
-- **Add Books**
-  - Input book title, author, and quantity.
-- **Borrow Books**
-  - Input book title and quantity to borrow.
-- **Return Books**
-  - Input book title and quantity to return.
-- **List Books**
-  - View the inventory of books and their available quantities.
-- **Exit**
-  - Close the program.
-
----
-
-## Contribution
-
-If you wish to improve or add features to this program, feel free to fork the repository and submit a pull request. Contributions are always welcome!
-
----
-
 Thank you for using the **Basic Library System**!

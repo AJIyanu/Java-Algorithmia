@@ -1,7 +1,15 @@
+package Basic_Library_System;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
+/**
+ * Book class to represent a book with title, author, and quantity.
+ * It provides methods to add books, borrow books, and display book details.
+ * 
+ */
 class Book {
     private String title;
     private String author;
@@ -21,10 +29,22 @@ class Book {
         return this.quantity;
     }
 
+    /**
+     * Adds the specified quantity of books to the current quantity.
+     * @param quantity the quantity of books to add
+     * 
+     * returns void
+     */
     public void addBook(int quantity) {
         this.quantity += quantity;
     }
 
+    /**
+     * Borrow the specified quantity of books if available.
+     * 
+     * @param quantity the quantity of books to borrow
+     * @return true if the books were successfully borrowed, false otherwise
+     */
     public boolean borrowBook(int quantity) {
         if (this.quantity >= quantity) {
             this.quantity -= quantity;
@@ -40,22 +60,25 @@ class Book {
     }
 }
 
+/**
+ * BasicLibrary class to manage a collection of books.
+ * It provides methods to add books, borrow books, return books, and list books.
+ * 
+ */
 public class BasicLibrary {
 
     private static HashMap<String, Book> books = new HashMap<>();
     private static Map<String, Runnable> cmd = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
-    
+
 
     public static void main(String[] args) {
 
-        //add commands
         cmd.put("Add Book", () -> BasicLibrary.addBook());
         cmd.put("Borrow Book", () -> BasicLibrary.borrowBook());
         cmd.put("Return Book", () -> BasicLibrary.returnBook());
         cmd.put("List Books", () -> BasicLibrary.listBooks());
 
-        //welcome user
         System.out.println("Welcome to Basic Library System!\n");
 
         //Run Console Loop
@@ -79,14 +102,19 @@ public class BasicLibrary {
         }
 
     }
-    
+
+    /**
+     * Adds a book to the library if new book
+     * or adds quantity to the existing book
+     * 
+     * @return void
+     */
     public static void addBook() {
         System.out.println("What is the title of the book you are willing to add:");
         String title = scanner.nextLine();
         System.out.println("Who is the author of the book:");
         String author = scanner.nextLine();
 
-        //handle error if user input not and integer
         boolean isInt = false;
         int quantity = 0;
 
@@ -109,14 +137,19 @@ public class BasicLibrary {
         }
 
     }
-    
+
+
+    /**
+     * Borrows a book from the library if available
+     *
+     * @return void
+     */
     public static void borrowBook() {
         System.out.println("What is the title of the book you are willing to borrow:");
         String title = scanner.nextLine();
         System.out.println("How many of this book are you willing to borrow:");
         int quantity = 0;
 
-        //handle user input error
         boolean isInt = false;
         while (!isInt) {
             try {
@@ -140,7 +173,12 @@ public class BasicLibrary {
             System.out.println("Sorry, we don't have that book in our library.");
         }
     }
-    
+
+    /**
+     * Returns a book to the library
+     * 
+     * @return void
+     */
     public static void returnBook() {
         System.out.println("What is the title of the book you are willing to return:");
         String title = scanner.nextLine();
@@ -165,6 +203,11 @@ public class BasicLibrary {
         }
     }
 
+    /**
+     * Lists all the books in the library
+     * 
+     * @return void
+     */
     public static void listBooks() {
         for (String title : books.keySet()) {
             System.out.println(title + " - " + books.get(title).getQuantity());
