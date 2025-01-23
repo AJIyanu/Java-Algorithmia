@@ -168,4 +168,6 @@ Working on this project sharpens development skills, encourages creativity, and 
 
 ## Contact Information
 
-- **GitHub**: [Your GitHub Profile Link]
+- **GitHub**:
+- **Linkedin**:
+- **Twitter**:
