@@ -51,6 +51,23 @@ public class StudentManagement {
     }
 
     /**
+     * Prints the information of all student to the console
+     * 
+     */
+    public static void allStudentsinfo() {
+        for (Student student : students) {
+            System.out.println(
+                    "ID: " + student.getId() +
+                            "\nName: " + student.getName() +
+                            "\nAge: " + student.getAge() +
+                            "\nGrade: " + student.getGrade());
+            System.out.println("******************************************************");
+        }
+        System.out.println("Total Students: " + count);
+        
+    }
+
+    /**
      * Updates the grade of a student
      * 
      * @param searchString the name or ID of the student
