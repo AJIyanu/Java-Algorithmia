@@ -1,7 +1,3 @@
-Here's a comprehensive README file based on your Java project, explaining the purpose, usage of each class, methods, and variables, describing static methods and variables, and providing instructions for running the program and interacting with the administrator interface.
-
----
-
 # Course Enrollment and Grade Management System (CEAGMS)
 
 ## **Introduction**
@@ -145,7 +141,3 @@ Upon launching the program:
 - Add database integration for persistent storage.
 - Develop a graphical user interface (GUI) for improved usability.
 - Implement advanced analytics for performance tracking.
-
----
-
-Let me know if you'd like to refine or extend this documentation! 🚀
