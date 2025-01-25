@@ -25,14 +25,17 @@ public class Student {
         this.name = name;
     }
 
-    public boolean enrollCourse(Course newCourse) {
+    public boolean enrollCourse(Course newCourse) throws Exception {
         for (Course course : courses.keySet()) {
             if (course.getCode().equals(newCourse.getCode())) {
                 return false;
             }
         }
+        if (newCourse.getCount() == newCourse.getMaximumCapacity()) {
+            throw new Exception("Maximum capacity reached for this course!");
+        }
         courses.put(newCourse, 0);
-        Course.newEnrolledStudent();
+        newCourse.newEnrolledStudent();
         return true;
     }
 
@@ -55,7 +58,11 @@ public class Student {
         for (int grade : courses.values()) {
             totalGrade += grade;
         }
-        return totalGrade / courses.size();
+        try{
+            return totalGrade / courses.size();
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     public void studentGradeInfo() {
@@ -64,6 +71,8 @@ public class Student {
         System.out.println("Student ID: " + id);
         System.out.println("Student Name: " + name);
         System.out.println("**********************************************");
+        if (totalCourses == 0)
+            return;
         for (Course course : courses.keySet()) {
             System.out.println("Course: " + course.getName() + " --> Grade: " + courses.get(course));
             totalGrade += courses.get(course);

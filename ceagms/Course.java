@@ -4,8 +4,8 @@ public class Course {
 
     private String name;
     private String code;
-    private static int maximumCapacity = 100;
-    private static int count = 0;
+    private int maximumCapacity = 20;
+    private int count = 0;
     private static int enrolledStudent = 0;
 
     public Course(String name, String code) {
@@ -39,23 +39,24 @@ public class Course {
         this.code = code;
     }
 
-    public static int getMaximumCapacity() {
-        return maximumCapacity;
+    public int getMaximumCapacity() {
+        return this.maximumCapacity;
     }
 
-    public static void setMaximumCapacity(int maxCapacity) {
-        maximumCapacity = maxCapacity;
+    public void setMaximumCapacity(int maxCapacity) {
+        this.maximumCapacity = maxCapacity;
     }
 
-    public static int getCount() {
-        return count;
+    public int getCount() {
+        return this.count;
     }
     
     public static int getEnrolledStudent() {
         return enrolledStudent;
     }
 
-    public static void newEnrolledStudent() {
+    public void newEnrolledStudent() {
         enrolledStudent++;
+        this.count++;
     }
 }
